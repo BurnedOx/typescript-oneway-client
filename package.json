@@ -1,5 +1,5 @@
 {
-  "name": "onepay-typescript-client",
+  "name": "onepay_client",
   "version": "1.0.0",
   "main": "build/main.js",
   "types": "build/main.d.ts",
