@@ -1,0 +1,25 @@
+{
+  "name": "onepay-typescript-client",
+  "version": "1.0.0",
+  "main": "build/main.js",
+  "types": "build/main.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --declaration"
+  },
+  "keywords": [],
+  "author": "Mainak Debnath",
+  "license": "ISC",
+  "description": "TypeScript client for OnePay API",
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.0.3",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "crypto-js": "^4.2.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
