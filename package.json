@@ -21,5 +21,8 @@
     "axios": "^1.10.0",
     "crypto-js": "^4.2.0",
     "jsonwebtoken": "^9.0.2"
-  }
+  },
+  "files": [
+    "build/"
+  ]
 }
