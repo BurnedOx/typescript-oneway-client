@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "build/main.js",
   "types": "build/main.d.ts",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc --declaration"
   },
