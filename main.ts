@@ -35,6 +35,11 @@ export interface PaymentPayload {
   ip: string;
   user_agent: string;
   meta_data?: Record<string, any> | null;
+  recurring_conf?: {
+    interval?: "DAY" | "WEEK" | "MONTH";
+    interval_count?: number;
+    total_recurrence?: number;
+  }
 }
 
 export interface PaymentIntent {
@@ -56,6 +61,8 @@ export interface PaymentIntent {
     | "refunded"
     | "cancelled";
   renew_id: string | null;
+  subscription_status: "active" | "inactive" | null;
+  next_billing_date: string | null;
   provider_id: string;
   contact_id: string;
   merchant_id: string;
