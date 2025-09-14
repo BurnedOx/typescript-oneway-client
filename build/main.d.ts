@@ -61,6 +61,8 @@ export interface PaymentIntent {
 export interface PaymentLink {
     payment_id: string;
     link: string;
+    recurring: boolean;
+    payment_intent: PaymentIntent;
 }
 export interface PaymentProvider {
     id: string;
