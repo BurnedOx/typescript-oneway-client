@@ -27,6 +27,7 @@ export interface PaymentPayload {
     return_url: string;
     ip: string;
     user_agent: string;
+    country_code?: string;
     meta_data?: Record<string, any> | null;
     recurring_conf?: {
         interval?: "DAY" | "WEEK" | "MONTH";
@@ -82,7 +83,7 @@ export default class OnepayClient {
     constructor(domain: string, apiKey: string, secretKey: string, timeout?: number);
     createContact(data: ContactPayload): Promise<string>;
     updateContact(contactId: string, data: ContactPayload): Promise<void>;
-    getProviders(ip: string): Promise<PaymentProvider[]>;
+    getProviders(ip?: string, countryCode?: string): Promise<PaymentProvider[]>;
     createPayment(data: PaymentPayload): Promise<PaymentLink>;
     getPayment(paymentId: string): Promise<PaymentIntent>;
 }

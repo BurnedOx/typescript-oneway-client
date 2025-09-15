@@ -136,9 +136,14 @@ class OnepayClient {
             yield this.http.put(`/v1/contacts/${contactId}`, payload);
         });
     }
-    getProviders(ip) {
+    getProviders(ip, countryCode) {
         return __awaiter(this, void 0, void 0, function* () {
-            const res = yield this.http.get(`/v1/payments/providers?ip=${ip}`);
+            const res = yield this.http.get("/v1/payments/providers", {
+                params: {
+                    ip,
+                    country_code: countryCode,
+                },
+            });
             return res.data.data;
         });
     }
