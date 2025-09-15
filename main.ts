@@ -34,12 +34,13 @@ export interface PaymentPayload {
   return_url: string;
   ip: string;
   user_agent: string;
+  country_code?: string;
   meta_data?: Record<string, any> | null;
   recurring_conf?: {
     interval?: "DAY" | "WEEK" | "MONTH";
     interval_count?: number;
     total_recurrence?: number;
-  }
+  };
 }
 
 export interface PaymentIntent {
@@ -173,9 +174,15 @@ export default class OnepayClient {
     await this.http.put(`/v1/contacts/${contactId}`, payload);
   }
 
-  public async getProviders(ip: string) {
+  public async getProviders(ip?: string, countryCode?: string) {
     const res = await this.http.get<OnepayResponse<PaymentProvider[]>>(
-      `/v1/payments/providers?ip=${ip}`
+      "/v1/payments/providers",
+      {
+        params: {
+          ip,
+          country_code: countryCode,
+        },
+      }
     );
     return res.data.data;
   }
