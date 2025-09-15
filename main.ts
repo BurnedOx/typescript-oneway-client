@@ -28,7 +28,7 @@ export interface ContactPayload {
 
 export interface PaymentPayload {
   contact_id: string;
-  provider: "stripe" | "razorpay" | "billdesk";
+  provider: "stripe" | "razorpay" | "billdesk" | "xendit";
   amount: number;
   currency: string;
   return_url: string;
@@ -84,7 +84,7 @@ export interface PaymentLink {
 export interface PaymentProvider {
   id: string;
   name: string;
-  slug: "stripe" | "razorpay" | "billdesk";
+  slug: "stripe" | "razorpay" | "billdesk" | "xendit";
   logo: string | null;
   description: string | null;
   is_recommended: boolean;
